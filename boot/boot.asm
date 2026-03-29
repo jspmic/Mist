@@ -97,6 +97,7 @@ welcome_msg:
     db "Welcome to Mist!", 0
 welcome_len equ $ - welcome_msg
 
+
 gdt_start:
     dq 0
 gdt_code:
