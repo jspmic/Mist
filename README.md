@@ -26,7 +26,9 @@ Mist currently has a few essential components:
   - [ ] etc.
 
 ### Explanation...
+<details>
 #### 🥇 Bootloader
+<details>
 - **Paging**:
   - Address of PML4: 0x1000
   - Address of PDPT: 0x2000
@@ -47,7 +49,9 @@ Mist currently has a few essential components:
   mov rax, 0x100000
   call rax
   ```
+</details>
 #### 🎯 Kernel
+<details>
 1. PMM:
 A tool that has a bitmap of all pages and tracks their statuses (1 - already allocated; 0 - free)
 Also it have some functions you can use in your kernel-level programs (And it will be used by many of tools that I will make later)
@@ -81,7 +85,10 @@ It have couple of functions that using by any functions in standard library
 |`vga_clear()`         |Clears the screen without moving cursor         |
 |`vga_putchar(x, y, c)`|Puts c to place that have (x, y) coordinates    |
 |`vga_getchar(x, y)`   |Returns character that was on (x, y) coordinates|
+
 **I recommend you use tools from standard library to work with screen instead of using VGA driver functions**
+</details>
+</details>
 
 ##  🏁 Get started
 ***I DON'T recommend to try Mist on real PC. Instead of this use QEMU***
@@ -90,6 +97,7 @@ Also you should have GCC to compile Mist
 You can start with 2 ways:
 
 - Compile by yourself
+<details>
   -. Clone Mist repo:
   ```
   git clone https://github.com/L-fyz/Mist
@@ -103,8 +111,10 @@ You can start with 2 ways:
   ```
   make run
   ```
+</details>
 
 - Use already compiled Mist.img from repo
+<details>
   - Copy Mist.img:
   ```
   wget https://raw.githubusercontent.com/L-fyz/Mist/main/Mist.img ~/Mist
@@ -113,6 +123,7 @@ You can start with 2 ways:
   ```
   qemu-system-x86_64 -drive format=raw,file=Mist.img -no-reboot
   ```
+</details>
 
 ## 😰 Issues
 ***Mist - young project made by schoolboy***
