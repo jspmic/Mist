@@ -32,19 +32,19 @@ Mist currently has a few essential components:
 
 <details>
 
-- **Paging**:
+- **Paging:**
   - Address of PML4: 0x1000
   - Address of PDPT: 0x2000
   - Address of PD: 0x3000
   - __No__ PT: There are 2MB pages
 
-- **GDT**:
+- **GDT:**
   - GDT settings you can see at the end of boot/BootLoader.asm
 
-- **A20**:
+- **A20:**
   - Same as GDT
 
-- **Kernel load**:
+- **Kernel load:**
   - Firstly kernel is loaded to the 0x10000 with BIOS interrupts
   - Then it moves to 0x100000 using a loop
   - It calls with:
@@ -60,7 +60,7 @@ Mist currently has a few essential components:
 
 <details>
 
-1. PMM:
+- **PMM:**
 A tool that has a bitmap of all pages and tracks their statuses (1 - already allocated; 0 - free)
 Also it have some functions you can use in your kernel-level programs (And it will be used by many of tools that I will make later)
 
@@ -70,7 +70,7 @@ Also it have some functions you can use in your kernel-level programs (And it wi
 |`alloc()`               |Gives addresses of free page with lowest address|
 |`pmm_free(addr of page)`|Clear status of given page                      |
 
-2. Standard C library:
+- **Standard C library:**
 Import:
 ```C
 #include <mist.h>
@@ -86,7 +86,7 @@ Table of functions that it have:
 |`putchar(a)`       |Insert a to the cursor place and move cursor right (Down if screen width ends)|
 |`print(str)`       |Just print... You know                                                        |
 
-3. VGA driver
+- **VGA driver:**
 It have couple of functions that using by any functions in standard library
 
 |Name                  |What it does                                    |
@@ -127,7 +127,7 @@ Compile by yourself
   make run
   ```
 
-- </details>
+</details>
 
 Use already compiled Mist.img from repo
 - <details>
@@ -141,7 +141,7 @@ Use already compiled Mist.img from repo
   qemu-system-x86_64 -drive format=raw,file=Mist.img -no-reboot
   ```
 
-- </details>
+</details>
 
 ## 😰 Issues
 ***Mist - young project made by schoolboy***
