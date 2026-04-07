@@ -61,7 +61,9 @@ Mist currently has a few essential components:
 <details>
 
 - **PMM:**
+
 A tool that has a bitmap of all pages and tracks their statuses (1 - already allocated; 0 - free)
+
 Also it have some functions you can use in your kernel-level programs (And it will be used by many of tools that I will make later)
 
 |Function                |What it does                                    |
@@ -71,6 +73,7 @@ Also it have some functions you can use in your kernel-level programs (And it wi
 |`pmm_free(addr of page)`|Clear status of given page                      |
 
 - **Standard C library:**
+
 Import:
 ```C
 #include <mist.h>
@@ -87,6 +90,7 @@ Table of functions that it have:
 |`print(str)`       |Just print... You know                                                        |
 
 - **VGA driver:**
+
 It have couple of functions that using by any functions in standard library
 
 |Name                  |What it does                                    |
@@ -102,6 +106,7 @@ It have couple of functions that using by any functions in standard library
 
 ##  🏁 Get started
 ***I DON'T recommend to try Mist on real PC. Instead of this use QEMU***
+
 Also you should have GCC to compile Mist
 > **Recommendation** ~~(Again...)~~: Use Linux to this
 You can start with 2 ways:
