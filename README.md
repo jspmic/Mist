@@ -1,10 +1,10 @@
 # 🌫️ Mist
-![Logo](./Mist.png)
+<img src="./Mist.png" width="300" align="center">
 
 ## ❓ What is it?
 ***Mist* is a simple x86_64 operating system made for learning how the PC works**
 
-## 🛠️ How does it works?
+## 🛠️ How does it work?
 Mist currently has a few essential components:
 - Bootloader
   - Paging
@@ -31,6 +31,7 @@ Mist currently has a few essential components:
 #### 🥇 Bootloader
 
 <details>
+
 - **Paging**:
   - Address of PML4: 0x1000
   - Address of PDPT: 0x2000
@@ -47,10 +48,12 @@ Mist currently has a few essential components:
   - Firstly kernel is loaded to the 0x10000 with BIOS interrupts
   - Then it moves to 0x100000 using a loop
   - It calls with:
+
   ```nasm
   mov rax, 0x100000
   call rax
   ```
+
 </details>
 
 #### 🎯 Kernel
@@ -63,6 +66,7 @@ Also it have some functions you can use in your kernel-level programs (And it wi
 
 |Function                |What it does                                    |
 |:----------------------:|:----------------------------------------------:|
+|pmm_init()              |Inits the PMM                                   |
 |`alloc()`               |Gives addresses of free page with lowest address|
 |`pmm_free(addr of page)`|Clear status of given page                      |
 
@@ -75,7 +79,7 @@ Table of functions that it have:
 |Name               |What it does                                                                  |
 |:-----------------:|:-----------------------------------------------------------------------------|
 |`copy(ab, cd, n)`  |Clone n bytes from cd to ab                                                   |
-|`copyfb(ab, cd, n)`|Same as clone() but from the back                                             |
+|`copyfb(ab, cd, n)`|Same as copy(), but from the back                                             |
 |`fill(ab, c, n)`   |Fill ab with c n times                                                        |
 |`iseq(ab, cd, n)`  |Check the equality of ab and cd (True - ab==cd; False - ab!=cd)               |
 |`clear()`          |Clears the screen and moves cursor to left up of screen                       |
@@ -99,7 +103,7 @@ It have couple of functions that using by any functions in standard library
 ##  🏁 Get started
 ***I DON'T recommend to try Mist on real PC. Instead of this use QEMU***
 Also you should have GCC to compile Mist
-> **Recomendation** ~~(Again...)~~: Use Linux to this
+> **Recommendation** ~~(Again...)~~: Use Linux to this
 You can start with 2 ways:
 
 - Compile by yourself
@@ -107,15 +111,18 @@ You can start with 2 ways:
   - <details>
 
   - Clone Mist repo:
+
   ```
   git clone https://github.com/L-fyz/Mist
   ```
   - Compile (GCC):
+
   ```
   cd ~/Mist
   make
   ```
   - Run with QEMU:
+
   ```
   make run
   ```
@@ -139,7 +146,7 @@ You can start with 2 ways:
 ## 😰 Issues
 ***Mist - young project made by schoolboy***
 
-It can include many errors and bugs
+It may contain bugs and errors
 
 If you have one of these, you can visit the [issues](https://github.com/L-fyz/Mist/issues)
-Also you can do pull requests with your code. You'r welcome!
+Also you can do pull requests with your code. You're welcome!
